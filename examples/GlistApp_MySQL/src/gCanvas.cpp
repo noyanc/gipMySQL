@@ -17,10 +17,13 @@ gCanvas::~gCanvas() {
 }
 
 void gCanvas::setup() {
+	logo.loadImage("glistengine_logo.png");
+
 	std::string hostname = "IP number or URL of the MySQL server";
 	std::string username = "Your username in the remote MySQL server";
 	std::string password = "Your password";
 	std::string database = "The name of the remote MySQL database to connect";
+
 	mysql.connect(hostname.c_str(), username.c_str(), password.c_str(), database.c_str());
 
 	gLogi("gCanvas") << "Server Info:" << mysql.getServerInfo();
@@ -44,6 +47,7 @@ void gCanvas::update() {
 }
 
 void gCanvas::draw() {
+	logo.draw((getWidth() - logo.getWidth()) / 2, (getHeight() - logo.getHeight()) / 2);
 }
 
 void gCanvas::keyPressed(int key) {
