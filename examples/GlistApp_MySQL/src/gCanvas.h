@@ -40,6 +40,7 @@ public:
 
 private:
 	gApp* root;
+	gImage logo;
 	gipMySQL mysql;
 };
 
